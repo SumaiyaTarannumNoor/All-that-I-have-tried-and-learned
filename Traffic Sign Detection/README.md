@@ -1,6 +1,6 @@
 This project was taken from Venelin Velcov's "Transfer Learning for Image Classification with PyTorch & Python Tutorial | Traffic Sign Recognition". </br>
 The YouTube link for the project: https://www.youtube.com/watch?v=yYlVOrbV_KY&t=3003s </br>
-The dataset contains **43 classes** of traffic signsand have used **ResNet34** for transfer learning. </br>
+The dataset contains **43 classes** of traffic signs and Venelin has used **ResNet34** for transfer learning. </br>
 We have tried to use some of the traffic signs for the classification purpose. </br>
 The used traffic signs are: __Give way, No entry, Priority road and stop__. </br>
 We have used **__Resnet50__ and __ResNet34__** for our purpose. </br>
