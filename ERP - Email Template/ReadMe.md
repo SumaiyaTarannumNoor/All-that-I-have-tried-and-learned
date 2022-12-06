@@ -1,2 +1,5 @@
 Live Version Available on - https://techknowgram.com/tkgemail.html<br>
-Email Contents are written by Mr Sanel Dazel.
+Open in your browser.
+Ctrl + A
+Ctrl + C
+Ctrl + V in your email body. Enjoy! :)
