@@ -1,4 +1,4 @@
-# AWS AI Conclave 
+# AWS AI Conclave 2024
 - Module 1 Handout - Welcome note
 - Module 2 Handout - Generative AI keynote
 - Module 3 Handout - Capitalizing on the promise of generative AI
