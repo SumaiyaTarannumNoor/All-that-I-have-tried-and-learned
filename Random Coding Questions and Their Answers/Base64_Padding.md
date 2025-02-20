@@ -1,9 +1,11 @@
-### why we are using this decode_base64(encoded_str):
+### why we are using this:
+```python
+decode_base64(encoded_str):
     missing_padding = len(encoded_str) % 4
     if missing_padding:
         encoded_str += "=" * (4 - missing_padding)
     return base64.b64decode(encoded_str).decode("utf-8")
-
+```
 
 ###
 The function `decode_base64(encoded_str)` includes a step to ensure **correct padding** for the Base64 string before decoding it. Here's a breakdown of why it's necessary:
