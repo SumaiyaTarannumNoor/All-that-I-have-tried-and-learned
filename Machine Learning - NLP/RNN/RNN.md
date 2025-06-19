@@ -249,3 +249,55 @@ These formulas show how RNNs handle sequential data by retaining information in 
 In summary, the RNN architecture is defined by key formulas that handle the sequential dependencies of data. The hidden state is updated at each time step, and the output is calculated by transforming the hidden state. The overall function defines how these updates and transformations occur over time, allowing RNNs to process sequential data effectively.
  
 
+
+## How does an RNN work?
+
+A Recurrent Neural Network (RNN) processes sequences by maintaining a memory of previous inputs in its hidden state. At each time step, the RNN updates its hidden state based on the current input and its previous hidden state, enabling it to capture patterns over time.
+
+### 1. Hidden State Update
+
+At each time step \( t \), the hidden state \( h_t \) is updated as follows:
+
+\[
+h_t = f(h_{t-1}, x_t)
+\]
+
+Where:
+
+- \( h_t \) is the current hidden state (memory of the network)
+- \( h_{t-1} \) is the previous hidden state
+- \( x_t \) is the input at time step \( t \)
+- \( f \) is a nonlinear activation function (commonly tanh or ReLU)
+
+A more specific common formulation is:
+
+\[
+h_t = \tanh(W_{hh} h_{t-1} + W_{xh} x_t)
+\]
+
+Where:
+
+- \( W_{hh} \) is the weight matrix for the hidden state (recurrent weights)
+- \( W_{xh} \) is the weight matrix for the input
+
+### 2. Output Calculation
+
+The output at time step \( t \) is typically computed as:
+
+\[
+y_t = W_{hy} h_t
+\]
+
+Where:
+
+- \( y_t \) is the output at time step \( t \)
+- \( W_{hy} \) is the weight matrix for mapping the hidden state to the output
+
+### 3. Learning (Backpropagation Through Time)
+
+RNNs are trained using a variation of backpropagation, called **Backpropagation Through Time (BPTT)**, which unfolds the network through the sequence and updates the weights based on the errors at each time step.
+
+---
+
+**Summary:**  
+RNNs maintain a hidden state that acts as memory, updating it at each time step using the current input and the previous state. This mechanism makes them suitable for processing sequential data such as text, audio, or time series.
