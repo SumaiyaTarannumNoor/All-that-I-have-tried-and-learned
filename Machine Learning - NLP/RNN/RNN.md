@@ -119,7 +119,7 @@ RNNs share similarities in input and output structures with other deep learning 
   h_t = \tanh(U . X_t + W . h_{t-1} + B)
   \]
 
-  - This non-linearity squashes outputs to the range [-1, 1].
+  - This non-linearity put the outputs into the range [-1, 1].
     - Helps in stabilizing gradients and learning non-linear patterns.
 
 ---
