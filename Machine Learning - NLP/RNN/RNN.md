@@ -57,7 +57,7 @@ RNNs share similarities in input and output structures with other deep learning 
   - The core formula for the hidden state update is:
 
     \[
-    h = σ(U \cdot X + W \cdot h_{t-1} + B)
+    h = σ(U . X + W . h_{t-1} + B)
     \]
 
 ---
