@@ -351,6 +351,7 @@ The final derivative of the loss function with respect to the weight matrix \( W
 
 This iterative process is the essence of backpropagation through time.
 
+## MORE PRECISE EXPLANATIONS CAN BE FOUND HERE - https://www.quarkml.com/2023/08/backpropagation-through-time-explained-with-derivations.html
 ---
 
 ## Types Of Recurrent Neural Networks
