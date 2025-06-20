@@ -371,7 +371,7 @@ This is the simplest type of neural network architecture where there is a single
 
 In a One-to-Many RNN, the network processes a single input to produce multiple outputs over time. This is useful in tasks where one input triggers a sequence of predictions (outputs). For example, in image captioning, a single image can be used as input to generate a sequence of words as a caption.
 
-![One to Many RNN](https://media.geeksforgeeks.org/wp-content/uploads/20231204131355/Many-to-One-300.webp)  
+![One to Many RNN](https://media.geeksforgeeks.org/wp-content/uploads/20231204131304/One-to-Many-300.webp)  
 [Reference: GeeksforGeeks – RNN](https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/) <br>
 
 ---
@@ -380,7 +380,7 @@ In a One-to-Many RNN, the network processes a single input to produce multiple o
 
 The Many-to-One RNN receives a sequence of inputs and generates a single output. This type is useful when the overall context of the input sequence is needed to make one prediction. In sentiment analysis, the model receives a sequence of words (like a sentence) and produces a single output, like positive, negative, or neutral.
 
-![Many to One RNN](https://media.geeksforgeeks.org/wp-content/uploads/many-to-one-rnn.png)  
+![Many to One RNN](https://media.geeksforgeeks.org/wp-content/uploads/20231204131355/Many-to-One-300.webp)  
 [Reference: GeeksforGeeks – RNN](https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/) <br>
 
 ---
