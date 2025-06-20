@@ -360,7 +360,7 @@ There are four types of RNNs based on the number of inputs and outputs in the ne
 
 ### 1. One-to-One RNN
 
-This is the simplest type of neural network architecture where there is a single input and a single output. It is used for straightforward classification tasks such as binary classification where no sequential data is involved.
+This is the simplest type of neural network architecture, where there is a single input and a single output. It is used for straightforward classification tasks such as binary classification, where no sequential data is involved.
 
 ![One to One RNN](https://media.geeksforgeeks.org/wp-content/uploads/20231204131135/One-to-One-300.webp)  
 [Reference: GeeksforGeeks – RNN](https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/) <br>
@@ -396,7 +396,7 @@ The Many-to-Many RNN type processes a sequence of inputs and generates a sequenc
 
 ## Variants of Recurrent Neural Networks (RNNs)
 
-There are several variations of RNNs, each designed to address specific challenges or optimize for certain tasks:
+There are several variations of RNNs, each designed to address specific challenges or optimise for certain tasks:
 
 ### 1. Vanilla RNN
 
