@@ -396,7 +396,7 @@ The Many-to-Many RNN type processes a sequence of inputs and generates a sequenc
 
 ## Variants of Recurrent Neural Networks (RNNs)
 
-There are several variations of RNNs, each designed to address specific challenges or optimise for certain tasks:
+There are several variations of RNNs, each designed to address specific challenges or optimize for certain tasks:
 
 ### 1. Vanilla RNN
 
