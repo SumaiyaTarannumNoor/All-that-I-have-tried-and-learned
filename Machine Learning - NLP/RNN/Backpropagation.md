@@ -29,16 +29,20 @@ propagating error information backward through the network to refine its interna
 - **Hidden State Update:**
   - St = g1(Wx * Xt + Ws * St-1)
     - St: Hidden state (memory) at time t
+    - g1: Activation function (e.g., tanh, ReLU)
+    - Wx: Weight matrix for inputs
     - Xt: Input at time t
     - Ws: Weight matrix for hidden states
-    - Wx: Weight matrix for inputs
-    - g1: Activation function (e.g., tanh, ReLU)
+    - St-1: Hidden state (memory) at time t-1
+    
+      
 
 - **Output Generation:**
   - Yt = g2(Wy * St)
     - Yt: Output at time t
     - Wy: Weight matrix for outputs
     - g2: Activation function (e.g., softmax, sigmoid)
+    - St: Hidden state (memory) at time t
 
 ### Key Points
 
