@@ -3,7 +3,7 @@ Backpropagation is a supervised learning algorithm used to train artificial neur
 to the network's weights, allowing the network to adjust its weights to minimize the error between predicted and actual outputs. In essence, it's the process of 
 propagating error information backward through the network to refine its internal parameters. 
 
-[Reference:](https://www.geeksforgeeks.org/machine-learning/ml-back-propagation-through-time/)
+[Reference: Geeks for Geeks - Backpropagation](https://www.geeksforgeeks.org/machine-learning/ml-back-propagation-through-time/)
 
 - **Recurrent Neural Networks (RNNs)** are designed to process sequential data.
 - Unlike traditional neural networks, RNN outputs depend not only on the current input but also on previous inputs through a memory element.
