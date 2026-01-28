@@ -1,1 +1,1 @@
-The repository contains the Machine Learning, Deep Learning, React, (HTML+CSS) Templates projects, Conferences and Courses. 
+This repository contains everything that I have learned, worked on, worked with and found interesting. 
