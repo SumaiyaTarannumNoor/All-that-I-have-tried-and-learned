@@ -6,3 +6,5 @@
 - https://www.geeksforgeeks.org/artificial-intelligence/hallucination/
 ## ML | Common Loss Functions
 - https://www.geeksforgeeks.org/machine-learning/ml-common-loss-functions/
+# Loss Functions in Deep Learning
+- https://www.geeksforgeeks.org/deep-learning/loss-functions-in-deep-learning/
