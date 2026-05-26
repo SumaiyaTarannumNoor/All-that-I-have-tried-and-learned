@@ -4,3 +4,5 @@
 - https://www.ibm.com/think/topics/ai-hallucinations
 ## AI Hallucinations
 - https://www.geeksforgeeks.org/artificial-intelligence/hallucination/
+## ML | Common Loss Functions
+- https://www.geeksforgeeks.org/machine-learning/ml-common-loss-functions/
