@@ -14,3 +14,5 @@
 - https://www.neenopal.com/blog/dealing-with-outliers-and-missing-values-in-a-dataset
 ## Attention Mechanism in ML
 - https://www.geeksforgeeks.org/artificial-intelligence/ml-attention-mechanism/
+## Types of Attention Mechanism
+- https://www.geeksforgeeks.org/nlp/types-of-attention-mechanism/
