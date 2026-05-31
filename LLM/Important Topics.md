@@ -12,3 +12,5 @@
 - https://medium.com/@Adekola_Olawale/dealing-with-outliers-in-machine-learning-af09b5ce6aa2
 ## Dealing with outliers and missing values in a dataset
 - https://www.neenopal.com/blog/dealing-with-outliers-and-missing-values-in-a-dataset
+## Attention Mechanism in ML
+- https://www.geeksforgeeks.org/artificial-intelligence/ml-attention-mechanism/
