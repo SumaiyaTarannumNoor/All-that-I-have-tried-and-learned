@@ -8,3 +8,5 @@
 - https://www.geeksforgeeks.org/machine-learning/ml-common-loss-functions/
 # Loss Functions in Deep Learning
 - https://www.geeksforgeeks.org/deep-learning/loss-functions-in-deep-learning/
+## Dealing with Outliers in Machine Learning
+- https://medium.com/@Adekola_Olawale/dealing-with-outliers-in-machine-learning-af09b5ce6aa2
