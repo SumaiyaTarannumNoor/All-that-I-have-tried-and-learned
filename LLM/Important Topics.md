@@ -10,3 +10,5 @@
 - https://www.geeksforgeeks.org/deep-learning/loss-functions-in-deep-learning/
 ## Dealing with Outliers in Machine Learning
 - https://medium.com/@Adekola_Olawale/dealing-with-outliers-in-machine-learning-af09b5ce6aa2
+## Dealing with outliers and missing values in a dataset
+- https://www.neenopal.com/blog/dealing-with-outliers-and-missing-values-in-a-dataset
