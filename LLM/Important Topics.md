@@ -18,3 +18,5 @@
 - https://www.geeksforgeeks.org/nlp/types-of-attention-mechanism/
 ## One-Hot Encoding in NLP
 - https://www.geeksforgeeks.org/nlp/one-hot-encoding-in-nlp/
+## One Hot Encoding in Machine Learning
+- https://www.geeksforgeeks.org/machine-learning/ml-one-hot-encoding/
