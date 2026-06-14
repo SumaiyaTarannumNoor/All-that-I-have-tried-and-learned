@@ -16,3 +16,5 @@
 - https://www.geeksforgeeks.org/artificial-intelligence/ml-attention-mechanism/
 ## Types of Attention Mechanism
 - https://www.geeksforgeeks.org/nlp/types-of-attention-mechanism/
+## One-Hot Encoding in NLP
+- https://www.geeksforgeeks.org/nlp/one-hot-encoding-in-nlp/
