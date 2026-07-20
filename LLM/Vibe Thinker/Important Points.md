@@ -128,47 +128,23 @@ Near the end:
 - The learning rate approaches zero.
 - The model fine-tunes its parameters carefully.
 
-The learning rate follows the cosine formula:
+### Formula
 
-\[
-\eta_t = \eta_{min} + \frac{1}{2}(\eta_{max}-\eta_{min})
-\left(1+\cos\left(\frac{t}{T}\pi\right)\right)
-\]
+```text
+η(t) = η_min + 0.5 × (η_max − η_min) ×
+       [1 + cos(π × t / T)]
+```
 
 Where:
 
-- \(\eta_t\) = learning rate at step \(t\)
-- \(\eta_{max}\) = initial learning rate
-- \(\eta_{min}\) = minimum learning rate
-- \(T\) = total training steps or epochs
-
-### Visualization
-
-
-::contentReference[oaicite:0]{index=0}
-
-
-The curve starts high and smoothly decreases, mirroring the behavior of the learning rate during training.
-
----
-
-## Why Cosine Annealing Is Effective
-
-### Early Training: Fast Exploration
-
-- Large parameter updates
-- Faster convergence
-- Easier escape from poor local minima
-
-### Late Training: Precise Optimization
-
-- Smaller parameter updates
-- Reduced oscillation
-- More stable convergence
-
-### Smooth Transition
-
-Unlike step-based schedules that suddenly drop the learning rate, cosine annealing changes it gradually, often leading to better training stability.
+| Symbol | Meaning |
+|----------|----------|
+| η(t) | Learning rate at training step t |
+| η_max | Initial (maximum) learning rate |
+| η_min | Minimum learning rate |
+| t | Current training step or epoch |
+| T | Total number of training steps or epochs |
+| π | Mathematical constant Pi (≈ 3.14159) |
 
 ---
 
@@ -176,11 +152,13 @@ Unlike step-based schedules that suddenly drop the learning rate, cosine anneali
 
 Suppose:
 
-- Initial learning rate = 0.001
-- Minimum learning rate = 0.000001
-- Training duration = 100 epochs
+```text
+η_max = 0.001
+η_min = 0.000001
+T = 100 epochs
+```
 
-The schedule behaves approximately as:
+The learning rate changes approximately as follows:
 
 | Epoch | Learning Rate |
 |---------|---------------|
@@ -190,7 +168,45 @@ The schedule behaves approximately as:
 | 75 | 0.000147 |
 | 100 | 0.000001 |
 
-The decrease is smooth rather than abrupt.
+---
+
+## Visual Shape
+
+```text
+Learning Rate
+     ^
+0.001|*
+     | \
+     |  \
+     |   \
+     |    \
+     |      \
+     |        \
+0.000|----------*----------> Epochs
+       0       50       100
+```
+
+The learning rate starts high and smoothly decreases toward the minimum value.
+
+---
+
+## Why Cosine Annealing Is Effective
+
+### Early Training: Fast Exploration
+
+- Large parameter updates
+- Faster convergence
+- Better exploration of the solution space
+
+### Late Training: Precise Optimization
+
+- Smaller parameter updates
+- Reduced oscillation
+- More stable convergence
+
+### Smooth Transition
+
+Unlike step-based schedules that suddenly reduce the learning rate, cosine annealing decreases it gradually, often leading to better optimization and improved final performance.
 
 ---
 
@@ -198,7 +214,7 @@ The decrease is smooth rather than abrupt.
 
 A common extension is **Cosine Annealing Warm Restarts (SGDR)**.
 
-Instead of decreasing once:
+Instead of decreasing only once:
 
 1. Learning rate decreases following a cosine curve.
 2. It is reset to a high value.
@@ -206,9 +222,9 @@ Instead of decreasing once:
 
 Benefits:
 
-- Helps escape local minima.
-- Encourages exploration during long training runs.
-- Often improves final model performance.
+- Escapes local minima.
+- Improves exploration.
+- Often produces better final results.
 
 ---
 
@@ -217,12 +233,11 @@ Benefits:
 Cosine annealing is widely used in:
 
 - Large Language Models (LLMs)
+- GPT-style Transformers
 - Vision Transformers (ViTs)
-- CNNs for image classification
+- Convolutional Neural Networks (CNNs)
 - Reinforcement Learning
 - Diffusion Models
-
-Models such as GPT-style transformers, LLaMA variants, and many modern foundation models commonly use cosine learning rate schedules.
 
 ---
 
@@ -233,6 +248,8 @@ Cosine annealing is a learning rate scheduling technique that:
 - Starts with a high learning rate.
 - Gradually decreases it using a cosine-shaped curve.
 - Ends with a very small learning rate for fine-tuning.
-- Provides smoother and more stable optimization than abrupt learning rate drops.
+- Provides smoother optimization than abrupt learning rate drops.
 
-It helps neural networks learn quickly at the beginning and refine their knowledge precisely near the end of training.
+This allows neural networks to learn quickly during early training and perform precise adjustments during later stages.
+```
+```
