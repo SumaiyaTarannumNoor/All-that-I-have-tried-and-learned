@@ -253,3 +253,160 @@ Cosine annealing is a learning rate scheduling technique that:
 This allows neural networks to learn quickly during early training and perform precise adjustments during later stages.
 ```
 ```
+
+
+# Pass@1 and Pass@K
+
+**Pass@1** and **Pass@K** are evaluation metrics used to measure the performance of AI models, especially on coding, mathematics, and reasoning benchmarks.
+
+## Pass@1
+
+**Pass@1** measures the probability that the model produces the correct answer on its **first attempt**.
+
+### Example
+
+The model is asked a programming question and generates one solution:
+
+```text
+Attempt 1 → Correct
+```
+
+Result:
+
+```text
+Pass@1 = Success
+```
+
+If the first answer is incorrect:
+
+```text
+Attempt 1 → Incorrect
+```
+
+Result:
+
+```text
+Pass@1 = Failure
+```
+
+### What It Measures
+
+- First-try accuracy
+- Reliability
+- Precision of the model's initial response
+
+A high Pass@1 score indicates that the model is likely to provide a correct answer immediately.
+
+---
+
+## Pass@K
+
+**Pass@K** measures the probability that at least **one correct answer** appears among **K generated attempts**.
+
+### Example (K = 5)
+
+```text
+Attempt 1 → Incorrect
+Attempt 2 → Incorrect
+Attempt 3 → Correct
+Attempt 4 → Incorrect
+Attempt 5 → Incorrect
+```
+
+Since one of the five attempts is correct:
+
+```text
+Pass@5 = Success
+```
+
+### What It Measures
+
+- Ability to explore multiple solutions
+- Diversity of reasoning
+- Probability of finding a correct answer among several attempts
+
+A high Pass@K score indicates that the model is good at generating multiple candidate solutions, even if its first answer is not always correct.
+
+---
+
+## Simple Analogy
+
+Imagine taking a multiple-choice test.
+
+### Pass@1
+
+You get only one chance:
+
+```text
+One guess → Correct = Pass
+One guess → Wrong = Fail
+```
+
+### Pass@K
+
+You get K chances:
+
+```text
+Guess 1 → Wrong
+Guess 2 → Wrong
+Guess 3 → Correct
+```
+
+Because one guess is correct:
+
+```text
+Pass@K = Pass
+```
+
+---
+
+## Comparison
+
+| Metric | Meaning |
+|----------|----------|
+| Pass@1 | Correct on the first attempt |
+| Pass@K | At least one correct answer within K attempts |
+| Focus | Accuracy |
+| Focus of Pass@K | Solution diversity and exploration |
+
+---
+
+## Example Scores
+
+| Model | Pass@1 | Pass@10 |
+|---------|---------|----------|
+| Model A | 80% | 90% |
+| Model B | 70% | 95% |
+
+Interpretation:
+
+- Model A is more accurate on the first try.
+- Model B is better at generating multiple possible solutions and eventually finding the correct one.
+
+---
+
+## Why It Matters
+
+### Pass@1 is important for:
+
+- Chatbots
+- Question answering systems
+- Real-time assistants
+- Production AI systems
+
+### Pass@K is important for:
+
+- Coding assistants
+- Mathematical problem solving
+- Research agents
+- Systems that can generate multiple candidate solutions
+
+---
+
+## Summary
+
+- **Pass@1** measures whether the AI gets the answer right on its first attempt.
+- **Pass@K** measures whether the AI produces at least one correct answer within K attempts.
+- High **Pass@1** indicates strong immediate accuracy.
+- High **Pass@K** indicates strong exploration and solution-generation ability.
+- Both metrics are commonly used to evaluate modern coding and reasoning models.
