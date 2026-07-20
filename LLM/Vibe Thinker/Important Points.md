@@ -94,119 +94,145 @@ Although all inputs are text, they come from different knowledge domains.
 - A modern AI system can be both **multimodal** and **multi-domain**, allowing it to understand multiple data formats across a wide range of subjects.
 
 
+# Cosine Annealing Learning Rate Schedule
 
-# VibeThinker-3B Training Pipeline
+A **cosine annealing schedule** is a dynamic learning rate strategy used during neural network training. Instead of keeping the learning rate fixed, it gradually decreases the learning rate following the shape of a **cosine curve**.
 
-VibeThinker-3B uses a **hybrid training strategy** that combines supervised learning, reinforcement learning, teacher distillation, and self-distillation. The model first learns from large, powerful teacher models and later improves itself through self-generated high-quality solutions.
+## Purpose
 
-The training process follows the exact sequence below.
+The learning rate controls how large a step the model takes when updating its parameters.
 
----
+A good training process usually needs:
 
-## Step 1: Supervised Fine-Tuning (SFT)
+- A **high learning rate** at the beginning for rapid exploration.
+- A **low learning rate** near the end for precise fine-tuning.
 
-### Purpose
-Teach the model fundamental reasoning and problem-solving patterns.
-
-### Process
-- Train on thousands of curated examples.
-- Cover domains such as:
-  - Mathematics
-  - Programming
-  - Science
-  - Logical reasoning
-
-### Outcome
-The model learns how correct solutions are structured and develops a basic understanding of problem-solving techniques.
+Cosine annealing provides a smooth transition between these two phases.
 
 ---
 
-## Step 2: Multi-Domain Reinforcement Learning (RL)
+## How It Works
 
-### Purpose
-Encourage independent reasoning and exploration.
+At the start of training:
 
-### Process
-- The model attempts problems on its own.
-- It generates step-by-step reasoning rather than only final answers.
-- A reward is given only when the final answer is correct.
+- The learning rate is high.
+- The model explores many possible solutions.
 
-### Characteristics
-- Promotes deeper reasoning abilities.
-- Improves performance across multiple domains.
-- Helps the model discover effective solution strategies.
+As training progresses:
 
-### Outcome
-The model becomes more capable of solving problems independently while developing stronger reasoning chains.
+- The learning rate gradually decreases.
+- Updates become smaller and more stable.
 
----
+Near the end:
 
-## Step 3: Strong Teacher Distillation
+- The learning rate approaches zero.
+- The model fine-tunes its parameters carefully.
 
-### Why It Is Needed
+The learning rate follows the cosine formula:
 
-A 3-billion-parameter model has limited capacity compared to very large language models. Some advanced mathematical, scientific, and coding problems require reasoning patterns that a smaller model may not discover by itself.
+\[
+\eta_t = \eta_{min} + \frac{1}{2}(\eta_{max}-\eta_{min})
+\left(1+\cos\left(\frac{t}{T}\pi\right)\right)
+\]
 
-Large teacher models provide these advanced reasoning paths.
+Where:
 
-### Process
-- Powerful teacher models generate high-quality solutions.
-- Teachers reveal hidden intermediate reasoning steps.
-- The smaller model learns by imitating these solutions.
+- \(\eta_t\) = learning rate at step \(t\)
+- \(\eta_{max}\) = initial learning rate
+- \(\eta_{min}\) = minimum learning rate
+- \(T\) = total training steps or epochs
 
-### Benefits
-- Transfers advanced reasoning strategies.
-- Improves performance on difficult tasks.
-- Allows the small model to acquire capabilities beyond what it could independently discover.
+### Visualization
 
-### Outcome
-The model learns superior problem-solving habits from larger, more capable systems.
+
+::contentReference[oaicite:0]{index=0}
+
+
+The curve starts high and smoothly decreases, mirroring the behavior of the learning rate during training.
 
 ---
 
-## Step 4: Offline Self-Distillation (Final Phase)
+## Why Cosine Annealing Is Effective
 
-### Purpose
-Consolidate and refine learned capabilities.
+### Early Training: Fast Exploration
 
-### Process
-1. The model generates multiple solutions on its own.
-2. High-quality solutions are selected.
-3. Incorrect or weak outputs are filtered out.
-4. The model retrains using its best self-generated examples.
+- Large parameter updates
+- Faster convergence
+- Easier escape from poor local minima
 
-### Benefits
-- Reinforces successful reasoning patterns.
-- Reduces dependence on external teacher models.
-- Improves consistency and generalization.
-- Helps preserve learned skills without memorizing vast amounts of additional data.
+### Late Training: Precise Optimization
 
-### Outcome
-The model effectively becomes its own teacher, strengthening and stabilizing the knowledge acquired during previous training stages.
+- Smaller parameter updates
+- Reduced oscillation
+- More stable convergence
+
+### Smooth Transition
+
+Unlike step-based schedules that suddenly drop the learning rate, cosine annealing changes it gradually, often leading to better training stability.
 
 ---
 
-## Complete Training Flow
+## Example
 
-```text
-Supervised Fine-Tuning (SFT)
-            ↓
-Multi-Domain Reinforcement Learning (RL)
-            ↓
-Strong Teacher Distillation
-            ↓
-Offline Self-Distillation
-```
+Suppose:
+
+- Initial learning rate = 0.001
+- Minimum learning rate = 0.000001
+- Training duration = 100 epochs
+
+The schedule behaves approximately as:
+
+| Epoch | Learning Rate |
+|---------|---------------|
+| 0 | 0.001000 |
+| 25 | 0.000854 |
+| 50 | 0.000500 |
+| 75 | 0.000147 |
+| 100 | 0.000001 |
+
+The decrease is smooth rather than abrupt.
+
+---
+
+## Cosine Annealing with Warm Restarts
+
+A common extension is **Cosine Annealing Warm Restarts (SGDR)**.
+
+Instead of decreasing once:
+
+1. Learning rate decreases following a cosine curve.
+2. It is reset to a high value.
+3. The process repeats.
+
+Benefits:
+
+- Helps escape local minima.
+- Encourages exploration during long training runs.
+- Often improves final model performance.
+
+---
+
+## Applications
+
+Cosine annealing is widely used in:
+
+- Large Language Models (LLMs)
+- Vision Transformers (ViTs)
+- CNNs for image classification
+- Reinforcement Learning
+- Diffusion Models
+
+Models such as GPT-style transformers, LLaMA variants, and many modern foundation models commonly use cosine learning rate schedules.
 
 ---
 
 ## Summary
 
-VibeThinker-3B follows a four-stage training pipeline:
+Cosine annealing is a learning rate scheduling technique that:
 
-1. **Supervised Fine-Tuning (SFT)** builds foundational knowledge.
-2. **Multi-Domain Reinforcement Learning (RL)** develops independent reasoning skills.
-3. **Strong Teacher Distillation** transfers advanced reasoning from powerful teacher models.
-4. **Offline Self-Distillation** enables the model to refine itself using its own best solutions.
+- Starts with a high learning rate.
+- Gradually decreases it using a cosine-shaped curve.
+- Ends with a very small learning rate for fine-tuning.
+- Provides smoother and more stable optimization than abrupt learning rate drops.
 
-This hybrid approach allows a relatively small 3B-parameter model to achieve strong reasoning performance by combining external guidance with self-improvement.
+It helps neural networks learn quickly at the beginning and refine their knowledge precisely near the end of training.
