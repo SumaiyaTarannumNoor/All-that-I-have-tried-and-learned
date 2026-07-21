@@ -1,5 +1,5 @@
 ## SFT - Supervised-Fine Tuning
-## MGPO - MaxENT-Guided Policy Optimization````md id="mgpo_maxent"
+## MGPO - MaxENT-Guided Policy Optimization
 # MGPO (MaxEnt-Guided Policy Optimization)
 
 **MaxEnt-Guided Policy Optimization (MGPO)** is a reinforcement learning and LLM fine-tuning method that incorporates **Maximum Entropy (MaxEnt) regularization** into policy optimization. The goal is to improve exploration, stability, and learning efficiency by encouraging the model to remain uncertain when appropriate rather than becoming overconfident too early. :contentReference[oaicite:0]{index=0}
